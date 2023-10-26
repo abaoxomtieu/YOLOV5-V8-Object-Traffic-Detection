@@ -25,14 +25,11 @@ git clone https://github.com/hotonbao/YOLOV5.git
 cd YOLOV5
 ```
 
-2. Dataset, Weight:
+2. Dowload Weight File:
    
-   -Dataset: 
-   https://www.kaggle.com/datasets/yusufberksardoan/traffic-detection-project/
+   Weight: https://drive.google.com/file/d/1zw0rR7iSfobJ9CwPXe2-YqvjrSmjzt_T/view?usp=sharing
 
-   -Weight: https://drive.google.com/file/d/1zw0rR7iSfobJ9CwPXe2-YqvjrSmjzt_T/view?usp=sharing
-   - You can use kaggle and import yolov5-training.ipynb from my repository to train with above dataset.
-   - Or download my pre-trained model loaded with onnx: 
+   **Notice:** *Replace PATH_MODEL in the configs.py file with the pre-trained model file.*
   
 
 3. Run the inference script to perform object detection on an image with FastAPI or Streamlit:
@@ -42,7 +39,7 @@ cd YOLOV5
    uvicorn api:api --port 8000
    ```
    Type "/docs" after link  http://127.0.0.1:8000 to test with any image
-   ![image](readme_img\FastAPI.png)
+   ![image](readme_img/FastAPI.png)
 
    **Streamlit**:
    
@@ -51,21 +48,22 @@ cd YOLOV5
    streamlit run app.py --server.fileWatcherType=none
    ```
    It will open:
-   ![image](readme_img\Streamlit.png)
+   ![image](readme_img/Streamlit.png)
 
 
 4. Ouput:
    Run test.ipynb file to see output.
 
    Example:
-   ![image](readme_img\Out_put.png)
+   ![image](readme_img/Out_put.png)
    *It is an object that has 6 arguments equivalent to* 
    **[ xmin, ymin, xmax, ymax, confidence, classname ']**
 
    Description:
-   ![image](readme_img\out_put_des.png)
-   Confidence score: Prediction score of class
-   Class name: has been encoded   
+   ![image](readme_img/out_put_des.png)
+   Confidence score: Prediction score of class.
+
+   *Class name: has been encoded :*
    0: "bicycle",
    1: "bus",
    2: "car",
@@ -73,15 +71,23 @@ cd YOLOV5
    4: "person"
 ## Model Performance
 
-- [Optional] Provide information about the model's performance metrics on your dataset (e.g., accuracy, mAP, FPS).
+- Loss 
+ ![image](/readme_img/results.png)
+- F1 Score For Class :
+- ![image](/readme_img/F1_curve.png)
 
 ## Training
 
-- [Optional] If you trained the model on your dataset, include detailed instructions on how to prepare and structure the dataset, as well as how to run the training process.
+**Dataset:**
+   https://www.kaggle.com/datasets/yusufberksardoan/traffic-detection-project/
+
+Load the dataset link in and enter yolov5-training.ipynb run all cells then download the best m.onnx file.
 
 ## Acknowledgments
 
-- Mention any sources or repositories you used as a reference or base for this YOLOv5 implementation.
+https://github.com/ultralytics/yolov5/tree/master/models
+
+Visit the link if you want to train the model with many different architectural sizes
 
 ## License
 
@@ -89,14 +95,13 @@ cd YOLOV5
 
 ## Author
 
-[Your Name]
+Ho Ton Bao 
 
 ## Contact
 
-For any questions or inquiries, feel free to contact [your email address].
+Phone number : +84949800149
+
+Email: htbqn2003@gmail.com
+
 
 ---
-
-[Include any additional sections, such as model evaluation, dataset details, and results if applicable.]
-
-[Replace bracketed placeholders with actual information and customize the README as needed.]

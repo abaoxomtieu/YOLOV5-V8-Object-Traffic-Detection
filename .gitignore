@@ -1,4 +1,6 @@
-weight
+weight/best_m.onnx
+weight/best_m.pt
+weight/last_m.pt
 venv
 __pycache__
 2023-10-24 09-09-52.mkv
