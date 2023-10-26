@@ -1,6 +1,12 @@
 # YOLOv5 Medium Model Trained on 5 Classes
 
 This repository contains a YOLOv5 model trained on a dataset that includes 5 classes: Person, Bus, Car, Motorbike, and Bicycle. YOLO (You Only Look Once) is a popular object detection model capable of real-time object detection. The "Medium" variant of YOLOv5 refers to the specific architecture and model size used in this implementation.
+![Gif](readme_img/ezgif.com-video-to-gif.gif)
+
+
+Input: image or camera
+
+Ouput: processed image or frame
 
 ## Model Details
 
@@ -25,7 +31,8 @@ git clone https://github.com/hotonbao/YOLOV5.git
 cd YOLOV5
 ```
 
-2. Dowload Weight File:
+
+1. Dowload Weight File:
    
    Weight: https://drive.google.com/file/d/1zw0rR7iSfobJ9CwPXe2-YqvjrSmjzt_T/view?usp=sharing
 
@@ -36,7 +43,7 @@ cd YOLOV5
 
    **FastAPI**:
    ```bash
-   uvicorn api:api --port 8000
+   python api.py
    ```
    Type "/docs" after link  http://127.0.0.1:8000 to test with any image
    ![image](readme_img/FastAPI.png)
@@ -89,9 +96,6 @@ https://github.com/ultralytics/yolov5/tree/master/models
 
 Visit the link if you want to train the model with many different architectural sizes
 
-## License
-
-[Specify the license for your repository if applicable. For example, use MIT, Apache, or your preferred license.]
 
 ## Author
 
