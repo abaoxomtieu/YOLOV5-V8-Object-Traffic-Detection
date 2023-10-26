@@ -35,8 +35,9 @@ if selected_service == "Image Prediction":
     else:
         st.info("Upload an image for prediction.")
 else:
-    # Stream the video feed from the FastAPI service
-    iframe = f'<iframe src="{api_url}" width="1280" height="720"></iframe>'
-    st.markdown(iframe, unsafe_allow_html=True)
+    if st.button("Open Camera"):
+        # Use an iframe to display the video feed from the FastAPI service
+        iframe = f'<iframe src="{api_url}" width="1280" height="720"></iframe>'
+        st.markdown(iframe, unsafe_allow_html=True)
 
 st.write("Note: Make sure your FastAPI server is running and accessible at the specified URL.")

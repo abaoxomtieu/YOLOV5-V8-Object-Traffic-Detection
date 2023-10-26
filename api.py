@@ -51,20 +51,21 @@ def generate_frames():
             pred = postprocess(pred)[0]
 
             # Annotate the frame with bounding boxes and labels
-            for box in pred:
-                x1, y1, x2, y2, confidence, class_idx = box
-                x1, y1, x2, y2 = map(int, [x1, y1, x2, y2])
-                class_label = IDX2TAGs.get(int(class_idx), "Unknown")
-                label = f"{class_label}: {confidence:.2f}"
-                print("label")
-                # Apply padding and ratio adjustments to each bounding box
-                x1 = int((x1 - padd_left) / ratio)
-                y1 = int((y1 - padd_top) / ratio)
-                x2 = int((x2 - padd_left) / ratio)
-                y2 = int((y2 - padd_top) / ratio)
+            if pred is not None:
+                for box in pred:
+                    x1, y1, x2, y2, confidence, class_idx = box
+                    x1, y1, x2, y2 = map(int, [x1, y1, x2, y2])
+                    class_label = IDX2TAGs.get(int(class_idx), "Unknown")
+                    label = f"{class_label}: {confidence:.2f}"
+                    print("label")
+                    # Apply padding and ratio adjustments to each bounding box
+                    x1 = int((x1 - padd_left) / ratio)
+                    y1 = int((y1 - padd_top) / ratio)
+                    x2 = int((x2 - padd_left) / ratio)
+                    y2 = int((y2 - padd_top) / ratio)
 
-                cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
-                cv2.putText(frame, label, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
+                    cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
+                    cv2.putText(frame, label, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
 
         _, buffer = cv2.imencode('.jpg', frame)
         frame_bytes = buffer.tobytes()
