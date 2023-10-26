@@ -1,0 +1,6 @@
+train: /kaggle/input/traffic-detection-project/train/images
+val: /kaggle/input/traffic-detection-project/valid/images
+test: /kaggle/input/traffic-detection-project/test/test/images
+
+nc: 5
+names: ['bicycle', 'bus', 'car', 'motorbike', 'person']

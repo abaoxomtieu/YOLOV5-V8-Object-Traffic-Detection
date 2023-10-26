@@ -12,18 +12,7 @@ This repository contains a YOLOv5 model trained on a dataset that includes 5 cla
 
 ## Installation and Dependencies
 
-To run this YOLOv5 model, you need to have the following dependencies installed:
 
-- [PyTorch](https://pytorch.org/)
-- [NumPy](https://numpy.org/)
-- [OpenCV](https://opencv.org/)
-- [YOLOv5](https://github.com/ultralytics/yolov5) (If not already included)
-
-You can install the necessary packages using `pip`:
-
-```bash
-pip install torch numpy opencv-python
-```
 
 ## Usage
 
@@ -32,29 +21,56 @@ To use this YOLOv5 model for transportation detection, follow these steps:
 1. Clone this repository:
 
 ```bash
-git clone [repository-url]
-cd yolo-v5-5classes-medium
+git clone https://github.com/hotonbao/YOLOV5.git
+cd YOLOV5
 ```
 
-2. Download the pre-trained weights or train the model on your dataset:
+2. Dataset, Weight:
+   
+   -Dataset: 
+   https://www.kaggle.com/datasets/yusufberksardoan/traffic-detection-project/
 
-   - If you have your own dataset, you can use the provided training script to train the model.
-   - If pre-trained weights are available, download them and place them in the model's directory.
+   -Weight: https://drive.google.com/file/d/1zw0rR7iSfobJ9CwPXe2-YqvjrSmjzt_T/view?usp=sharing
+   - You can use kaggle and import yolov5-training.ipynb from my repository to train with above dataset.
+   - Or download my pre-trained model loaded with onnx: 
+  
 
-3. Run the inference script to perform object detection on an image or video:
+3. Run the inference script to perform object detection on an image with FastAPI or Streamlit:
 
+   **FastAPI**:
    ```bash
-   python detect.py --source [image or video path] --weights [path to model weights] --conf [confidence threshold]
+   uvicorn api:api --port 8000
    ```
+   Type "/docs" after link  http://127.0.0.1:8000 to test with any image
+   ![image](readme_img\FastAPI.png)
+
+   **Streamlit**:
+   
+   Notice: Run FastAPI before run Streamlit and open new command line and run:
+   ```bash
+   streamlit run app.py --server.fileWatcherType=none
+   ```
+   It will open:
+   ![image](readme_img\Streamlit.png)
+
+
+4. Ouput:
+   Run test.ipynb file to see output.
 
    Example:
+   ![image](readme_img\Out_put.png)
+   *It is an object that has 6 arguments equivalent to* 
+   **[ xmin, ymin, xmax, ymax, confidence, classname ']**
 
-   ```bash
-   python detect.py --source data/sample.jpg --weights weights/yolov5-medium-5classes.pt --conf 0.5
-   ```
-
-4. The script will output the detected objects in the specified image or video.
-
+   Description:
+   ![image](readme_img\out_put_des.png)
+   Confidence score: Prediction score of class
+   Class name: has been encoded   
+   0: "bicycle",
+   1: "bus",
+   2: "car",
+   3: "motorbike",
+   4: "person"
 ## Model Performance
 
 - [Optional] Provide information about the model's performance metrics on your dataset (e.g., accuracy, mAP, FPS).
