@@ -32,7 +32,7 @@ cd YOLOV5
 ```
 
 
-1. Dowload Weight File:
+2. Dowload Weight File:
    
    Weight: https://drive.google.com/file/d/1zw0rR7iSfobJ9CwPXe2-YqvjrSmjzt_T/view?usp=sharing
 
@@ -55,10 +55,11 @@ cd YOLOV5
    streamlit run app.py --server.fileWatcherType=none
    ```
    It will open:
+
    ![image](readme_img/Streamlit.png)
 
 
-4. Ouput:
+4. Ouput of YoloV5:
    Run test.ipynb file to see output.
 
    Example:
