@@ -63,8 +63,9 @@ cd YOLOV5
    Run test.ipynb file to see output.
 
    Example:
-   ![image](readme_img/Out_put.png)
    
+   ![image](readme_img/Out_put.png)
+
    *It is an object that has 6 arguments equivalent to* 
    **[ xmin, ymin, xmax, ymax, confidence, classname ']**
 
