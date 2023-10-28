@@ -1,6 +1,7 @@
-# YOLOv5 Medium Model Trained on 5 Classes
+# YOLOv5 Medium, YOLOv8 Nano Model Trained on 5 Classes
 
-This repository contains a YOLOv5 model trained on a dataset that includes 5 classes: Person, Bus, Car, Motorbike, and Bicycle. YOLO (You Only Look Once) is a popular object detection model capable of real-time object detection. The "Medium" variant of YOLOv5 refers to the specific architecture and model size used in this implementation.
+This repository contains a YOLOv5, YOLOv8n model trained on a dataset that includes 5 classes: Person, Bus, Car, Motorbike, and Bicycle. YOLO (You Only Look Once) is a popular object detection model capable of real-time object detection. The "Medium" variant of YOLOv5 refers to the specific architecture and model size used in this implementation.
+
 ![Gif](readme_img/ezgif.com-video-to-gif.gif)
 
 
@@ -9,7 +10,7 @@ Input: image or camera
 Ouput: processed image or frame
 
 # Table of Contents
-- [YOLOv5 Medium Model Trained on 5 Classes](#yolov5-medium-model-trained-on-5-classes)
+- [YOLOv5 Medium, YOLOv8 Nano Model Trained on 5 Classes](#yolov5-medium-yolov8-nano-model-trained-on-5-classes)
 - [Table of Contents](#table-of-contents)
   - [Model Details](#model-details)
   - [Installation and Dependencies](#installation-and-dependencies)
@@ -31,8 +32,9 @@ Ouput: processed image or frame
 
 
 ## Installation and Dependencies
-
-
+```bash 
+pip install requirements.txt
+```
 
 ## Usage
 
@@ -73,7 +75,20 @@ cd YOLOV5
    ![image](readme_img/Streamlit.png)
 
 
-4. Ouput of YoloV5:
+4. -Ouput shape after inference:
+   
+   ![image](readme_img/out-put-after-infer.png)
+
+   - 1: is number of batch
+   
+   - 12348: number of bounding boxes in image.
+   - 10=(4+1+5): 
+       - x_max, y_max, x_min, y_min (4)
+       - confidence score is an object (1)
+       - confidence correspond to each class(5).
+
+
+   -Output  postprocess
    Run test.ipynb file to see output.
 
    Example:
@@ -81,7 +96,8 @@ cd YOLOV5
    ![image](readme_img/Out_put.png)
 
    *It is an object that has 6 arguments equivalent to* 
-   **[ xmin, ymin, xmax, ymax, confidence, classname ']**
+
+   **[ xmin, ymin, xmax, ymax, confidence of class, classname ']**
 
    Description:
    ![image](readme_img/out_put_des.png)
