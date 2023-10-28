@@ -15,6 +15,8 @@ Ouput: processed image or frame
   - [Model Details](#model-details)
   - [Installation and Dependencies](#installation-and-dependencies)
   - [Usage](#usage)
+    - [YoloV5](#yolov5)
+    - [YoloV8](#yolov8)
   - [Model Performance](#model-performance)
   - [Training](#training)
   - [Acknowledgments](#acknowledgments)
@@ -50,12 +52,15 @@ cd YOLOV5
 
 2. Dowload Weight File:
    
-   Weight: https://drive.google.com/file/d/1zw0rR7iSfobJ9CwPXe2-YqvjrSmjzt_T/view?usp=sharing
+   Weight YoloV5: https://drive.google.com/file/d/1zw0rR7iSfobJ9CwPXe2-YqvjrSmjzt_T/view?usp=sharing
 
-   **Notice:** *Replace PATH_MODEL in the configs.py file with the pre-trained model file.*
+   Weight YoloV8: https://drive.google.com/file/d/1OSU5g3yz-IliqMFQhfbmVp0UA6e5nKcT/view?usp=sharing
+
+   **Notice:** *Replace PATH_MODEL in the configs.py(for YoloV5) file with the pre-trained model file.*
   
 
-3. Run the inference script to perform object detection on an image with FastAPI or Streamlit:
+3. Run the inference script to perform object detection on an image with FastAPI or Streamlit(YoloV5):
+   ### YoloV5 ###
 
    **FastAPI**:
    ```bash
@@ -74,7 +79,20 @@ cd YOLOV5
 
    ![image](readme_img/Streamlit.png)
 
+   ### YoloV8 ###
+      ```bash
+      cd yolo-v8
+      python app.py
+   ```
+   It will open a window:
 
+   ![image](readme_img/window-yolov8.png)
+
+   It have 3 functions:
+   - Load Image
+   - Start Camera
+   - Stop Camera
+   
 4. -Ouput shape after inference:
    
    ![image](readme_img/out-put-after-infer.png)
