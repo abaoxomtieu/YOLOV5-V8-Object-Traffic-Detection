@@ -17,4 +17,4 @@ IDX2COLORs = {
 font = ImageFont.truetype("arial.ttf", 20) 
 IMAGE_SIZE = (448, 448)
 
-PATH_MODEL = "weight/best_m.onnx"
+PATH_MODEL = "weight/best.onnx"
